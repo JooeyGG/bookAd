@@ -1,0 +1,475 @@
+@font-face {
+    font-family: 'JJK';
+    src: url('../font/Jujutsu\ Kaisen.ttf') format('truetype'),
+         
+    /* Add more formats if needed */
+}
+
+html,body {
+	width: 100%;
+	height: 100%;
+	font-family: 'JJK', sans-serif;
+	background-color: rgb(61, 51, 66);
+}
+
+.cover {
+	height: 600px;
+	width: 400px;
+	border: 1px solid black;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	overflow: hidden;
+}
+
+.cover img{
+	position: absolute;
+	
+}
+
+/*Title*/
+.name {
+	position: absolute;
+	top: 8%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 50px;
+	padding: 10px;
+	z-index: 7;
+	white-space: nowrap;
+	color: white;
+}
+
+.volume {
+	font-size: 35px;
+	z-index: 7;
+	white-space: nowrap;
+	color: white;
+	transform: translateY(-13px);
+}
+
+.columnTwo{
+	color: white;
+	transform: translate(-60px,45px);
+	padding: none;
+	margin-top: none;
+	margin-bottom: none;
+	margin: 0%;
+	
+}
+
+.author{
+	margin-top: 0%;
+	margin-bottom: 0%;
+}
+
+.column{
+	position: absolute;
+	top: 81%;
+	left: 5%;
+	z-index: 7;
+	columns: 2;
+	column-gap: none;
+	transform: translate(-10px,10px);
+}
+
+
+/*Components for models*/
+.Finger{
+	z-index: 6;
+	animation: fingerFall 3s forwards;
+}
+
+.left{
+	animation: fingerFallLeft 120s forwards;
+}
+
+.top{
+	
+	transform: translateY(-100px);
+	animation: moveTopFinger 15s ease-in infinite;
+}
+.bottom{
+	animation: fingerFallBottom 30s infinite;
+}
+.middle{
+	animation: fingerFallMiddle 145s forwards;
+}
+.reachingHand{
+	z-index: 5;
+	animation: rotateOutHand 8s infinite;
+}
+.otherArm{
+	z-index: 4;
+	animation: rotateArm 7s steps(300) infinite;
+}
+.outHandRobe{
+	z-index: 4;
+	animation: rotateOutRobe 5.03s steps(200) infinite;
+}
+.body{
+	z-index: 3;
+}
+.head{
+	z-index: 2;
+	animation: rotateHead 4s steps(300) infinite;
+}
+.backClothing{
+	z-index: 1;
+	animation: rotateOutRobe 4.97s steps(200) infinite;
+}
+.backCape{
+	z-index: 1;
+	animation: rotateBackRobe 5s infinite;
+}
+.background{
+	z-index: 0;
+	position: absolute;
+	scale: 1;
+	left: -50%;
+	top: -20%;
+	
+	animation: backgroundMovement 30s reverse infinite;
+}
+
+/*Slice on hover*/
+.name:hover ~ .reachingHand{
+	animation: handGrab 8s;
+}
+.name:hover ~ .slash{
+	animation: cleave 8s;
+}
+.name:hover ~ .slash2{
+	animation: cleave2 8s;
+}
+.name:hover ~ .slash3{
+	animation: cleave3 8s;
+}
+.name:hover ~ .white{
+	animation: whiteFlash 8s;
+}
+.name:hover ~ .black{
+	animation: blackFlash 8s;
+}
+.name:hover ~ .de{
+	animation: deGo 8s;
+}
+.name:hover ~ .whiteSlash{
+	animation: whiteCleave 8s;
+}
+.name:hover ~ .blackSlash{
+	animation: blackCleave 8s;
+}
+.name:hover ~ .domain{
+	animation: domainExpansion 8s;
+}
+.name:hover ~ .after{
+	animation: afterEffect 12s;
+}
+.name:hover{
+	animation: goAway 12s;
+}
+.name:hover ~ .column{
+	animation: goAway 12s;
+}
+.finger:hover{
+	opacity: 0;
+}
+
+/*Slashes*/
+.domain{
+	opacity: 0;
+	z-index: 10;
+}
+.after{
+	opacity: 0;
+	z-index: 8;
+}
+.slash{
+	opacity: 0;
+	z-index: 8;
+}
+.slash2{
+	opacity: 0;
+	z-index: 8;
+}
+.slash3{
+	opacity: 0;
+	z-index: 8;
+}
+
+.white{
+	opacity: 0;
+	z-index: 8;
+}
+.black{
+	opacity: 0;
+	z-index: 8;
+}
+.whiteSlash{
+	opacity: 0;
+	z-index: 8;
+}
+.blackSlash{
+	opacity: 0;
+	z-index: 8;
+}
+.de{
+	opacity: 0;
+	z-index: 8;
+}
+
+
+/*Animations*/
+@keyframes rotateArm {
+	0% {transform-origin: 340px 180px; transform: rotate(0deg);}
+	10% {transform-origin: 340px 180px; transform: rotate(-1deg);}
+	25%{transform-origin: 340px 180px; transform: rotate(5deg);}
+	60% {transform-origin: 340px 180px; transform: rotate(-3deg);}
+	90%{transform-origin: 340px 180px; transform: rotate(2deg);}
+	100% {transform-origin: 340px 180px; transform: rotate(0deg);}
+}
+@keyframes rotateBackClothes {
+	0% {}
+	18%{transform-origin: 390px 180px; transform: rotate(3deg);}
+	60% {transform-origin: 390px 180px; transform: rotate(2deg);}
+	90%{transform-origin: 390px 180px; transform: rotate(0deg);}
+	100% {}
+}
+@keyframes rotateHead {
+	0% {}
+	18%{ transform: rotate(1deg);}
+	60% { transform: rotate(-1deg);}
+	90%{transform: rotate(0deg);}
+	100% {}
+}
+@keyframes rotateOutRobe {
+	0% {}
+	10%{transform: rotate(2.5deg);}
+	30% {transform: rotate(1deg);}
+	60%{transform: rotate(2.5deg);}
+	90%{transform: rotate(2deg);}
+	100% {transform: rotate(0deg);}
+}
+
+@keyframes moveTopFinger {
+	0% {transform: translateY(0px);}
+	12% {transform: translateY(-20px); z-index: 7;}
+	25% {transform: translateY(-3px); z-index: 7;}
+	50% {transform: translateY(-10px); z-index: 7;}
+	75%{transform: translateY(-1px); z-index: 7;}
+	100% {transform: translateY(0px);}
+}
+
+@keyframes rotateBackRobe {
+	0% {}
+	10%{transform: rotate(2.5deg);}
+	30% {transform: rotate(1deg);}
+	60%{transform: rotate(3deg);}
+	90%{transform: rotate(2deg);}
+	100% {transform: rotate(0deg);}
+}
+
+@keyframes rotateOutHand {
+	0%{}
+	25%{transform: rotate(1deg);}
+	50%{transform: rotate(0deg);}
+	75%{transform: rotate(2deg);}
+	100%{transform: rotate(0deg);}
+}
+
+@keyframes handGrab {
+	0% {}
+	10% {transform: scale(1.07);}
+	59%{transform: scale(1.02);}
+	62%{transform: scale(1.06);}
+	87%{transform: scale(1.08);}
+	100% {}
+}
+@keyframes cleave {
+	0%{transform: scale(0.1);}
+	19%{opacity: 0; transform: scale(0.1);}
+	20%{opacity: 1; transform: scale(1); filter: none;}
+	21%{opacity: 1; transform: scale(1.8); filter: invert();}
+	22%{filter: none;}
+	57%{transform: scale(1.3);}
+	58%{filter: none; opacity: 0;}
+	63%{opacity: 0; transform: scale(0.1);}
+	64%{opacity: 1; transform: scale(1); filter: none;}
+	65%{opacity: 1; transform: scale(1.8); filter: invert();}
+	66%{filter: none;}
+	67%{filter: none; opacity: 0;}
+}
+@keyframes cleave2 {
+	0%{transform: scale(0.1);}
+	33%{opacity: 0; transform: scale(0.1);}
+	34%{opacity: 1; transform: scale(1); filter: none;}
+	35%{opacity: 1; transform: scale(1.8); filter: invert();}
+	36%{filter: none;}
+	59%{filter: none; opacity: 0;}
+	66%{ transform: scale(1);}
+	67%{opacity: 0; transform: scale(0.1);}
+	68%{opacity: 1; transform: scale(1); filter: none;}
+	69%{opacity: 1; transform: scale(1.8); filter: invert();}
+	70%{filter: none;}
+}
+@keyframes cleave3 {
+	0%{transform: scale(0.1);}
+	41%{opacity: 0; transform: scale(0.1);}
+	42%{opacity: 1; transform: scale(1);filter: none;}
+	43%{opacity: 1; transform: scale(1.8);filter: invert();}
+	44%{filter: none;}
+	60%{filter: none; opacity: 0;}
+	70%{transform: scale(1);}
+	71%{opacity: 0; transform: scale(0.1);}
+	72%{opacity: 1; transform: scale(1); filter: none;}
+	73%{opacity: 1; transform: scale(1.8); filter: invert();}
+	74%{filter: none;}
+}
+@keyframes whiteFlash{
+	21%{opacity: 0;}
+	22%{opacity: 1;}
+	23%{opacity: 0;}
+	35%{opacity: 0;}
+	36%{opacity: 1;}
+	37%{opacity: 0;}
+	43%{opacity: 0;}
+	44%{opacity: 1;}
+	45%{opacity: 0;}
+	65%{opacity: 0;}
+	66%{opacity: 1;}
+	67%{opacity: 0;}
+	69%{opacity: 0;}
+	70%{opacity: 1;}
+	71%{opacity: 0;}
+	73%{opacity: 0;}
+	75%{opacity: 1;}
+	76%{opacity: 0;}
+	79%{opacity: 0;}
+	80%{opacity: 1;}
+	81%{opacity: 0;}
+}
+@keyframes blackFlash{
+	20%{opacity: 0;}
+	21%{opacity: 1;}
+	22%{opacity: 0;}
+	34%{opacity: 0;}
+	35%{opacity: 1;}
+	36%{opacity: 0;}
+	42%{opacity: 0;}
+	43%{opacity: 1;}
+	44%{opacity: 0;}
+	64%{opacity: 0;}
+	65%{opacity: 1;}
+	66%{opacity: 0;}
+	68%{opacity: 0;}
+	69%{opacity: 1;}
+	70%{opacity: 0;}
+	72%{opacity: 0;}
+	74%{opacity: 1;}
+	75%{opacity: 0;}
+	78%{opacity: 0;}
+	79%{opacity: 1;}
+	80%{opacity: 0;}
+}
+@keyframes deGo {
+	0%{}
+	75%{opacity: 0;}
+	78%{opacity: 1;filter: none;}
+	79%{opacity: 1; filter: invert();}
+	80%{filter: none;}
+}
+@keyframes whiteCleave{
+	82%{opacity: 0;}
+	83%{opacity: 1;}
+	84%{opacity: 0;}
+	85%{opacity: 1;}
+	86%{opacity: 0;}
+	87%{opacity: 0;}
+	88%{opacity: 1;}
+	89%{opacity: 0;}
+	90%{opacity: 0;}
+	91%{opacity: 1;}
+	92%{opacity: 0;}
+}
+@keyframes blackCleave{
+	81%{opacity: 0;}
+	82%{opacity: 1;}
+	83%{opacity: 0;}
+	84%{opacity: 1;}
+	85%{opacity: 0;}
+	86%{opacity: 0;}
+	87%{opacity: 1;}
+	88%{opacity: 0;}
+	89%{opacity: 0;}
+	90%{opacity: 1;}
+	91%{opacity: 0;}
+}
+
+@keyframes domainExpansion{
+	85%{opacity: 0;}
+	86%{opacity: 1; filter: none;}
+	87%{filter: invert();}
+	88%{filter:none;}
+	89%{opacity: 0;}
+	90%{opacity: 1; filter: none;}
+	91%{filter: invert();}
+	92%{filter: none;}
+}
+@keyframes afterEffect{
+	60%{opacity: 0;}
+	61%{opacity: 1;}
+	100%{opacity: 0; transform: scale(1.2);}
+}
+
+@keyframes goAway{
+	8%{opacity: 0;}
+	97%{opacity: 0;}
+	100%{opacity: 1;}
+	
+}
+
+@keyframes fingerFallLeft{
+	0%{transform: translateY(-200px);}
+	3%{transform: translateY(80px);}
+	15%{transform: translateY(-60px);}
+	30%{transform: translateY(60px);}
+	45%{transform: translateY(-40px);}
+	60%{transform: translateY(40px);}
+	75%{transform: translateY(-20px);}
+	100%{transform: translate(0px);}
+}
+
+@keyframes fingerFallBottom{
+	0%{transform: translateY(20px);}
+	5%{transform: translateY(80px);}
+	15%{transform: translateY(10px);}
+	30%{transform: translateY(60px);}
+	45%{transform: translateY(5px);}
+	60%{transform: translateY(40px);}
+	75%{transform: translateY(3px);}
+	100%{transform: translate(0px);}
+}
+
+@keyframes fingerFallMiddle{
+	0%{transform: translateY(-700px);}
+	4%{transform: translateY(20px);}
+	15%{transform: translateY(-100px);}
+	30%{transform: translateY(13px);}
+	45%{transform: translateY(-80px);}
+	60%{transform: translateY(8px);}
+	75%{transform: translateY(-20px);}
+	100%{transform: translate(0px);}
+}
+
+@keyframes backgroundMovement{
+	0%{}
+	15%{transform: translateX(200px);}
+	30%{ transform: translateY(100px);}
+	45%{transform: translateX(-500px);}
+	60%{transform: translateX(200px);}
+	75%{transform: translateY(-450px);}
+	90%{transform: translateX(-500px);}
+	100%{}
+}
